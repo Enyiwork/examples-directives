@@ -1,0 +1,25 @@
+<h2> *ng Example </h2>
+
+<label for="number-input"> Enter a Number </label>
+<input id="number-input" type="number" placeholder="Add a Number..."
+  [(ngModel)]="userNumber"/>
+
+
+<p *ngIf="userNumber % 10 === 0; else blah">
+  That's a multiple of 10
+</p>
+
+<ng-template #notMultiple>
+  <p>
+    Your number sucks! It's not a multipla of 10.
+  </p>
+</ng-template>
+
+<!-- Using an opposite *ngIf -->
+<p *ngIf="userNumber % 10 === 0">
+  That's a multiple of 10 (no else)
+</p>
+
+<p *ngIf="userNumber % 10 !== 0">
+  Your number sucks! It's not a multipla of 10. (no else)
+</p>
